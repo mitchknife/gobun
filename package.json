@@ -1,12 +1,13 @@
 {
-  "name": "gobun",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+    "name": "gobun",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "prettier": "^3.2.5"
+    }
 }
