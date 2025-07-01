@@ -2,14 +2,23 @@
     "name": "gobun",
     "version": "1.0.0",
     "private": true,
+    "workspaces": [
+        "packages/backend/*",
+        "packages/frontend/*",
+        "packages/shared/*"
+    ],
     "scripts": {
-        "clean": "rm -rf node_modules",
-        "typecheck": "tsc",
+        "dev": "concurrently --names \"front,back \" \"bun run dev:frontend\" \"bun run dev:backend\"",
+        "dev:frontend": "bun run --filter='@gobun/*.app' dev",
+        "dev:backend": "bun run --filter='@gobun/*.server' dev",
+        "clean": "rm -rf node_modules packages/*/node_modules",
+        "typecheck": "bun run --filter='@gobun/*' typecheck",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
     "devDependencies": {
         "@types/bun": "latest",
+        "concurrently": "^9.2.0",
         "prettier": "^3.2.5",
         "typescript": "^5.8.3"
     }
