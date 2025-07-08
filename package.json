@@ -2,6 +2,7 @@
     "name": "gobun",
     "version": "1.0.0",
     "private": true,
+    "type": "module",
     "workspaces": [
         "packages/backend/*",
         "packages/frontend/*",
@@ -13,12 +14,18 @@
         "dev:backend": "bun run --filter='@gobun/*.server' dev",
         "clean": "rm -rf node_modules packages/*/node_modules",
         "typecheck": "bun run --filter='@gobun/*' typecheck",
+        "lint": "eslint --ext .ts,.tsx . ",
+        "lint:fix": "eslint . --ext .ts,.tsx --fix",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
     "devDependencies": {
         "@types/bun": "latest",
+        "@typescript-eslint/eslint-plugin": "^8.0.0",
+        "@typescript-eslint/parser": "^8.0.0",
         "concurrently": "^9.2.0",
+        "eslint": "^9.0.0",
+        "globals": "^16.2.0",
         "prettier": "^3.2.5",
         "typescript": "^5.8.3"
     }

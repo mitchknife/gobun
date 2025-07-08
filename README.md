@@ -37,6 +37,12 @@ bun run dev:backend
 # Type check all packages
 bun run typecheck
 
+# Lint code
+bun run lint
+
+# Lint and fix code
+bun run lint:fix
+
 # Format code
 bun run format
 ```
